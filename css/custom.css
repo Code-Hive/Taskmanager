@@ -1,3 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,400italic);
+
+body, h1, h2, h3, h4, h5 {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
 /* shell */
 
 /* left */
@@ -5,7 +11,10 @@
 #left {
 	background: #fff;
 	height: 100%;
-	
+}
+
+#left, #right {
+	padding-top: 1.5em;
 }
 
 body {
@@ -16,49 +25,43 @@ body {
 	color: #fff;
 }
 
+#logo {
+background: #333;
+max-width: 4em;
+padding: 0.5em;
+border-radius: 5px;
+margin-bottom: 1em;
+}
+
 /* FORM */
 
 #form input, #form textarea, #form select {
-	background: #198abe;
 	border: none;
 	box-shadow: none;
-	color: #fff;
-	font-size: 2em;
+	font-size: 1.2em;
+	background: #e3e3e3;
+	color: #888;
 	height: auto;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
-#form select {
-	color: #a6e0fb;
+.switch input:checked+label {
+background: #63C776;
 }
 
-::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #a6e0fb;
+.task-wrap .done.panel {
+	background: #63C776;
 }
-:focus::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #a6e0fb;
-    opacity: 0.5;
+.done.panel .switch input:checked+label {
+background: #fff;
 }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #a6e0fb;
-   opacity:  1;
+
+.done.panel .switch label:after {
+	background: #63C776;
 }
-:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #a6e0fb;
-   opacity:  0.5;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #a6e0fb;
-   opacity:  1;
-}
-:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #a6e0fb;
-   opacity:  1;
-}
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-   color:    #a6e0fb;
-}
-:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
-   color:    #a6e0fb;
+
+.done.panel h4 {
+	color: #fff;
 }
 
 /* LIST */
@@ -66,15 +69,21 @@ body {
 .label {
 	margin: 0;
 	text-transform: uppercase;
+	font-weight: 700;
 }
 
 .task-wrap .panel {
 	background: #fff;
     margin-bottom:0;
+    border-bottom: none;
 }
 
-.task-wrap :first-child {
-	border-bottom:0;
+.no-pad {
+	padding-left: 0;
+}
+
+.task-wrap .panel:last-child {
+	border-bottom:1px solid #e2e2e2;
 }
 
 
@@ -97,6 +106,12 @@ body {
 
 .panel.high {
 	border-bottom: 0.5em solid #960000;
+}
+
+/* COMPLETED */
+
+.completed h4 {
+	margin-left: 0.7em;
 }
 
 

@@ -17,20 +17,28 @@
     </style>
   </head>
   <body>
-
+	  		
 	  		<div id="shell" class="row" style="width: 100%; max-width: 100%;" ng-controller="TodoCtrl">
 	  			<!-- ADD ITEM FORM -->
 	  			<div id="left" class="medium-4 columns">
 	  			<div class="row">
 		  			<div class="medium-12 columns">
-		  				<br/>
-		  				<h1>Task Master</h1>
+		  				<div id="logo" class="radius" style="background: #333;">
+		  					<img src="img/logo.png" />
+		  				</div>
 			  			<form name="form" id="form" ng-submit="addtodo()">
 			  		<select ng-model="newtodofor" required>
 			  			<option value="" disabled selected>Add a task for...</option>
 			          	<option value="bill">Bill</option>
 			          	<option value="stephen">Stephen</option>
           				<option value="jennifer">Jennifer</option>
+          			</select>
+          			<select ng-model="newtodotype" required>
+          				<option value="" disabled selected>Type of task</option>
+			  			<option value="bug / error" >Bug / error</option>
+			          	<option value="new feature">New feature</option>
+			          	<option value="customer service">Customer service</option>
+          				<option value="other">Other</option>
           			</select>
           			<select ng-model="newtodopriority" required>
 			  			<option value="" disabled selected>Rate the tasks priority...</option>
@@ -42,11 +50,10 @@
 	  				
 	  				<textarea  placeholder="Your task" rows="4"  name="newtodomsg" ng-model="newtodomsg" required/>
 	  				</textarea>
-	  				<ul class="button-group">
-  <li><button class="button">Add</button></li>
-  <li><a href="#" ng-click="cleartodo()" class="button">Clear</a></li>
-
-  					</ul>
+	  				
+	  				<button class="button radius">Add task</button>
+	  				<a href="#" ng-click="cleartodo()" class="button radius secondary">Clear done</a>
+	  				
 	  			</form>
 	  				</div>
 	  			</div>
@@ -57,8 +64,7 @@
 	  			<div id="right" class="medium-8 columns">
 	  			<div class="row">
 		  			<div class="medium-12 columns">
-		  				<br/>
-			  			<input type="text" placeholder="Filter" ng-model="filter">
+			  			<!--<input type="text" placeholder="Filter" ng-model="filter">-->
 
 	  			<!-- END FILTER -->
 
@@ -72,11 +78,12 @@
 	  						<div class="small-4 columns">
 	  							<img src="img/{{todo.for}}.jpg" />
 	  						</div>
-	  						<div class="small-8 columns">
+	  						<div class="small-8 columns no-pad">
 	  							<ul class="unstyled">
-	  								<li><span class="label" ng-class="{alert: todo.priority == 'high', secondary: todo.priority == 'medium'}">{{todo.priority}}</span> priority</li>
-	  								<li>Assigned to {{todo.for}}</li>
-	  								<li>Complete by {{todo.date | date:'MM/dd/yyyy'}}</li>
+	  								<li><span class="label radius" ng-class="{alert: todo.priority == 'high', secondary: todo.priority == 'medium'}">{{todo.priority}}</span> priority</li>
+	  								<li>Assigned to: {{todo.for}}</li>
+	  								<li>Type: {{todo.type}}</li>
+	  								<li>Complete by: {{todo.date | date:'MM/dd/yyyy'}}</li>
 	  							</ul>
 	  						</div>
 		  				</header>
@@ -86,13 +93,21 @@
 	  						<div class="medium-12 columns">
 		  					<h3 style="font-weight: 300; color: #444; margin-bottom: 1em;">{{todo.msg}}</h3>
 		  					
-	  						<div class="switch">
-  <input type="checkbox" id="CheckboxSwitch{{$index + 1}}" ng-model="todo.done" />
-  <label for="CheckboxSwitch{{$index + 1}}"></label>
-</div> 
 	  						</div>
 		  				</article>
+		  				
                         </div>
+                        
+                        <div class="panel completed" ng-class="{done: todo.done == true}">
+		  					<div class="row">
+		  						<div class="medium-12 columns">
+		  					<div class="left switch radius">
+  <input type="checkbox" id="CheckboxSwitch{{$index + 1}}" ng-model="todo.done" />
+  <label for="CheckboxSwitch{{$index + 1}}"></label>
+</div> <h4 class="left">Completed</h4>
+		  						</div>
+		  					</div>
+		  				</div>
 	  				</section>
 	  			</li>
 	  		</ul>
