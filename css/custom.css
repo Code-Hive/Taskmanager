@@ -1,0 +1,156 @@
+/* shell */
+
+
+
+/* left */
+
+#left {
+	background: #239AD2;
+	height: 100%;
+	
+}
+
+#left h1 {
+	color: #fff;
+}
+
+/* FORM */
+
+#form input, #form textarea, #form select {
+	background: #198abe;
+	border: none;
+	box-shadow: none;
+	color: #fff;
+	font-size: 2em;
+	height: auto;
+}
+
+#form select {
+	color: #a6e0fb;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #a6e0fb;
+}
+:focus::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #a6e0fb;
+    opacity: 0.5;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #a6e0fb;
+   opacity:  1;
+}
+:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #a6e0fb;
+   opacity:  0.5;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #a6e0fb;
+   opacity:  1;
+}
+:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #a6e0fb;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #a6e0fb;
+}
+:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #a6e0fb;
+}
+
+/* LIST */
+
+.label {
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.panel {
+	background: #fff;
+}
+
+.panel img {
+	border-radius: 999px;
+}
+
+.panel header p {
+	margin: 0.4em 0;
+}
+.panel article h3 {
+	margin-top: 1em;
+}
+
+.panel.low {
+	border-bottom: 1em solid #008cba;
+}
+
+.panel.medium {
+	border-bottom: 1em solid #e7e7e7;
+}
+
+.panel.high {
+	border-bottom: 1em solid #f04124;
+}
+
+
+/* CHECKBOX */
+
+input[type="checkbox"]:before {
+	width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 0;
+    margin-top: -25px;
+    position: absolute;
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+
+input[type="checkbox"] {
+	
+}
+
+.unstyled {
+ padding: 0;
+ margin: 0;
+ list-style: none;
+}
+
+
+
+/* ANIMATION */
+.animate.ng-enter
+{ 
+	-webkit-animation: bounceInUp 0.6s;
+    -moz-animation: bounceInUp 0.6s;
+    -ms-animation: bounceInUp 0.6s;
+    animation: bounceInUp 0.6s;
+} 
+ 
+.animate.ng-leave {
+	-webkit-animation: bounceOut 0.6s;
+    -moz-animation: bounceOut 0.6s;
+    -ms-animation: bounceOut 0.6s;
+    animation: bounceOut 0.6s;
+}
+
+.animate.ng-leave.animate.ng-leave-active,
+.animate.ng-enter {
+	opacity: 0;
+}
+
+.animate.ng-enter.ng-enter-active, 
+.animate.ng-leave {
+	opacity: 1;
+}
+
+@media only screen and (min-width: 40.063em) {
+#shell {
+	width: 100%;
+	height: 100%;
+}
+#left {
+	position: fixed;
+}
+ } /* min-width 641px, medium screens */
