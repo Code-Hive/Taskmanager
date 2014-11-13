@@ -1,13 +1,15 @@
 /* shell */
 
-
-
 /* left */
 
 #left {
-	background: #239AD2;
+	background: #fff;
 	height: 100%;
 	
+}
+
+body {
+    background:#f7f7f7;   
 }
 
 #left h1 {
@@ -66,9 +68,16 @@
 	text-transform: uppercase;
 }
 
-.panel {
+.task-wrap .panel {
 	background: #fff;
+    margin-bottom:0;
 }
+
+.task-wrap :first-child {
+	border-bottom:0;
+}
+
+
 
 .panel img {
 	border-radius: 999px;
@@ -77,20 +86,17 @@
 .panel header p {
 	margin: 0.4em 0;
 }
-.panel article h3 {
-	margin-top: 1em;
-}
 
 .panel.low {
-	border-bottom: 1em solid #008cba;
+	border-bottom: 0.5em solid #6594ED;
 }
 
 .panel.medium {
-	border-bottom: 1em solid #e7e7e7;
+	border-bottom: 0.5em solid #FFFFE0;
 }
 
 .panel.high {
-	border-bottom: 1em solid #f04124;
+	border-bottom: 0.5em solid #960000;
 }
 
 
@@ -152,5 +158,6 @@ input[type="checkbox"] {
 }
 #left {
 	position: fixed;
+    border-right:1px solid #eee;
 }
  } /* min-width 641px, medium screens */

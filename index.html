@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TopCat</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/css/foundation.css" />
+    <link rel="stylesheet" href="css/foundation.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
     <link rel="stylesheet" href="css/custom.css" />
     <script src="js/vendor/modernizr.js"></script>
@@ -66,23 +66,24 @@
 
 	  					<ul class="small-block-grid-1 medium-block-grid-1 large-block-grid-2 ac-custom ac-checkbox ac-cross">
 	  			<li  class="animate" ng-repeat="todo in todos | filter:filter ">
-	  				<section class="panel {{todo.priority}}" ng-class="{{todo.priority}}">
+	  				<section class="{{todo.priority}} task-wrap" ng-class="{{todo.priority}}">
+                        <div class="panel">
 		  				<header class="row">
-	  						<div class="small-3 columns">
+	  						<div class="small-4 columns">
 	  							<img src="img/{{todo.for}}.jpg" />
 	  						</div>
-	  						<div class="small-9 columns">
+	  						<div class="small-8 columns">
 	  							<ul class="unstyled">
 	  								<li><span class="label" ng-class="{alert: todo.priority == 'high', secondary: todo.priority == 'medium'}">{{todo.priority}}</span> priority</li>
 	  								<li>Assigned to {{todo.for}}</li>
 	  								<li>Complete by {{todo.date | date:'MM/dd/yyyy'}}</li>
 	  							</ul>
 	  						</div>
-	  						
 		  				</header>
+                        </div>
+                        <div class="panel">
 		  				<article class="row">
 	  						<div class="medium-12 columns">
-	  						<hr/>
 		  					<h3 style="font-weight: 300; color: #444; margin-bottom: 1em;">{{todo.msg}}</h3>
 		  					
 	  						<div class="switch">
@@ -91,6 +92,7 @@
 </div> 
 	  						</div>
 		  				</article>
+                        </div>
 	  				</section>
 	  			</li>
 	  		</ul>
